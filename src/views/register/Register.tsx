@@ -14,14 +14,7 @@ const Register = () => {
   const { form, handleFormChange } = useUserForm();
 
   const handleSubmit = async () => {
-    console.log("form", form);
-    const res = await userApi.register({
-      id: "aa",
-      name: "aa",
-      password: "aa",
-      gender: "male",
-    });
-    console.log("res", res);
+    const res = await userApi.register(form);
   };
 
   return (
@@ -29,8 +22,8 @@ const Register = () => {
       <div className="register-container">
         <span className="register-title">Register</span>
         <TextField
-          name="id"
-          value={form.id}
+          name="userId"
+          value={form.userId}
           variant="outlined"
           label="ID"
           margin="normal"

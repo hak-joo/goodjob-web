@@ -7,13 +7,14 @@ import { ViewCardContext } from "@/context";
 import useUserForm from "@/hooks/user/User";
 
 import "./login.scss";
+import { userApi } from "@/apis/user";
 
 const Login = () => {
   const ViewCard = useContext(ViewCardContext);
   const { form, handleFormChange } = useUserForm();
 
-  const handleSubmit = () => {
-    console.log(form);
+  const handleSubmit = async () => {
+    const res = await userApi.login(form);
   };
 
   return (
@@ -22,7 +23,7 @@ const Login = () => {
         <span className="login-title">LOGIN</span>
         <TextField
           name="id"
-          value={form.id}
+          value={form.userId}
           variant="outlined"
           label="ID"
           margin="normal"

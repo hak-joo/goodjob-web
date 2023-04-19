@@ -3,7 +3,7 @@ import type { LoginForm } from "./types";
 
 const useUserForm = () => {
   const [form, setForm] = useState<LoginForm>({
-    id: "",
+    userId: "",
     name: "",
     gender: "male",
     password: "",
