@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { Button, TextField } from "@material-ui/core";
 
 import { ViewCardContext } from "@/context";
-import useUserForm from "@/hooks/user/User";
+import useUserForm from "@/hooks/user/UserForm";
 
 import "./register.scss";
 import { userApi } from "@/apis/user";

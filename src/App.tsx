@@ -2,6 +2,7 @@ import { Provider } from "react-redux";
 import Router from "./Router";
 import store from "./store";
 import ViewCard from "@/context/viewcard/ViewCard";
+
 import { ViewCardContext } from "./context";
 import { createTheme, ThemeProvider } from "@material-ui/core";
 
