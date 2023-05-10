@@ -1,7 +1,12 @@
-import baseApi from ".";
+import { baseApi } from ".";
 
-const companyApi = {
-  list: (Data: any) => baseApi.post(`/company/list`, Data),
+export const companyApi = {
+  list: (token: string) =>
+    baseApi.get(`/company`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }),
   getInfo: (Data: any) => baseApi.post(`/company/info`, Data),
   getAvg: (Data: any) => baseApi.post(`/average/info`, Data),
   getCustomList: (Data: any) => baseApi.post(`/company/customlist`, Data),
@@ -10,5 +15,3 @@ const companyApi = {
     baseApi.post(`/company/companyAnalysis`, Data),
   getCompanyList: (Data: any) => baseApi.post(`/company/getListCompany`, Data),
 };
-
-export default { companyApi };
